@@ -1,9 +1,8 @@
 /**
  * Big O
- * Worst Case: O(nlog₂n)
+ * Worst Case: O(n^2)
  * Best Case: O(nlog₂n)
  * -
- * 
  */
 
 function mergesort(arr)
