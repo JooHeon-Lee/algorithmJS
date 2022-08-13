@@ -31,3 +31,39 @@ const solution = (progresses, speeds) => {
 }
 
 console.log(solution([93, 30, 55],[1, 30, 5]));
+
+/**
+ * progresses	speeds	return
+  [93, 30, 55]	[1, 30, 5]	[2, 1
+   7  3  3
+    */
+
+
+   const solution2 = (p,s) => {
+    let days = [];
+    let result = [0];
+    let k = 0;
+    p.map((v,i) => {
+        let per = Math.ceil((100-v) / s[i]);
+        days.push(per);
+    })
+
+    let std = days[0]; // 기준 일 //[ 5, 10, 1, 1, 20, 1 ] 
+    //[ 7, 3, 9 ]
+
+    for(let i=0, j=0; i< days.length; i++) {
+        if(std >= days[i]) {
+            result[j] += 1;
+        } else {
+            result[++j] = 1;
+            std = days[i];
+        }
+    }
+    
+    
+}
+
+
+
+solution2([93, 30, 55],[1, 30, 5]);
+solution2([95, 90, 99, 99, 80, 99],[1, 1, 1, 1, 1, 1]);
