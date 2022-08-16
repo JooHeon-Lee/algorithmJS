@@ -20,3 +20,6 @@ const solution = (s) => {
 }
 
 solution(")()()");
+solution("()()");
+solution("(())()");
+solution(")()()");
