@@ -25,4 +25,8 @@ function solution(jobs) {
     return parseInt(answer/jobs.length);
 }
 
-solution([[0, 3], [1, 9], [2, 6]]);
+//solution([[0, 3], [1, 9], [2, 6]]);
+
+let arr = [[0, 3], [1, 9], [2, 6]];
+
+console.log(arr.shift());
