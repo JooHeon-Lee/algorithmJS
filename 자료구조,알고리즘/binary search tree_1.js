@@ -91,3 +91,19 @@
       callback(this.value);
     }
   }
+
+  
+// min : 상한선, max : 하한선 
+// 트리의 root 로 어떤 값이 들어올지 모르니까 초기값으로 각각 min = Infinity, max = -Infinity를 설정한다.
+function validate(node, min = Infinity, max = -Infinity) {
+  if(!node) return false; // node가 null 일 떄,
+
+  if (max < node.data && node.data <= min) {
+      if(node.left) return validate(node.left, node.data, max); // 왼쪽도 validate call, 이 때 왼쪽이니까, min = 상한선을 node.data로 업데이트한다.
+      if(node.right) return validate(node.right, min, node.data); // 오른쪽도 validate call, 이 때 오른쪽이니까, max = 하한선을 node.data로 업데이트한다.
+  } else {
+      return false; // 한 번이라도 false 만나면 콜스택 타고 올라가서 false를 return
+  }
+
+  return true; // 위에서 한 번도 false 안 걸리면, 최종적으로 true를 return
+}
