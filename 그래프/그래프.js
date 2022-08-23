@@ -11,9 +11,16 @@
  * 
  * edge-List - 엣지를 리스트에 넣으면 edge list -> [(0,1),(1,0)..]
  * 
- * Adjacency-List - 인프런 강의 참고
+ * Adjacency-List - 인프런 강의 참고 
  * ㄴ> 장점 공간복잡도가 낮음 O(n) 리스트이기 때문에 loop 돌 수 있음.
+ * ex) vertext-list + edge-list
+ *     adjacencyList = 
+ *      [
+ *          [0,1] --- vertex 0
+ *          [0,3] --- vertex 1
+ *       ]
  * 
  * Adjacency-Matrix - 인프런 강의 참고 엣지가 있으면 1 없으면 0 
  * ㄴ> 장점 엣지가 있는지 없는지 한번의 검색으로 알 수 있음. 단점 공간복잡도 n^2
  */
+
