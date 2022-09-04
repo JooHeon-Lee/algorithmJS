@@ -154,4 +154,5 @@ linkedList.getAt(2);
 
 //linkedList.clearList();
 
-console.log(linkedList)
+//console.log(linkedList)
+
