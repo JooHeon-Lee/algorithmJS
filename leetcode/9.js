@@ -9,12 +9,7 @@ const solution = (x) => {
 
     let v1 = String(x).split('').reverse().join('')
 
-    if(v1 == String(x)) {
-        return true
-    }else {
-        return false
-    }
-
+    return v1 === String(x)
 }
 
 solution(121)
