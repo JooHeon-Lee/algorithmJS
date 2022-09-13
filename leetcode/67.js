@@ -14,34 +14,64 @@
     3. 
  */
  var addBinary = function(a, b) {
-    let sum = String(Number(a) + Number(b))
-    let result = []
-    let carry = false
+    const aLen = a.length
+    const bLen = b.length
 
-    for(let i=sum.length; i>=0; i--) {
-        if(carry) {
-            let val = sum[i] + 1
+    let aidx = aLen - 1 
+    let bidx = bLen - 1
+    let carry = 0
+    let result = []
+
+    while(aidx >=0 && bidx >= 0) {
+        const val = Number(a[aidx]) + Number(b[bidx])
+        if(val > 1) {
+            carry = val - 1
         }else {
-            let val = sum[i]
-        }
-        
-        if(val == 2) {
-            result.push(0)
-            carry = true
-        }else {
-            result.push(Number(sum))
-            carry = false
-        }
-        if(i == 0 && carry) {
             result.unshift(val)
         }
-        
+
+        if(carry == 1) {
+            result.unshift(1)
+        }
+        aidx--
+        bidx--
     }
+    console.log(result)
 
-
+    
+return result.join('')
 
 
 };
 
 console.log(
     addBinary("11","1"))
+
+
+
+
+    /**
+ * @param {string} a
+ * @param {string} b
+ * @return {string}
+ */
+var addBinary = function(a, b) {
+    let carry = 0 
+    const res = []
+
+    const aLen = a.length;
+    const bLen = b.length;
+
+    for (let i = aLen - 1, j = bLen - 1; 0 <= (i >= j ? i : j) || 0; --i, --j) {
+        let aBin = i >= 0 ? Number(a[i]) : 0;
+        let bBin = j >= 0 ? Number(b[j]) : 0;
+
+        res.push((aBin + bBin + carry) % 2);
+        carry = aBin + bBin + carry > 1
+
+    }
+    if (carry) {
+        res.push(1)
+    }
+    return res.reverse().join('')
+};
