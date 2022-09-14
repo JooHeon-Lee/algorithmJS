@@ -75,3 +75,12 @@ var addBinary = function(a, b) {
     }
     return res.reverse().join('')
 };
+
+
+const solution = (a,b) => {
+    let carry = 0
+    const aLen = a.length
+    const bLen = b.length
+
+    
+}
