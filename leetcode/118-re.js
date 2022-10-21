@@ -3,7 +3,7 @@
  * @return {number[][]}
  */
  var generate = function(numRows) {
-    var i = 0;
+    var i = 0; 
   var j = 0;
   var res = [];
   for (i = 0; i < numRows; i++) {
